@@ -70,69 +70,122 @@ byte address() {
 
 void changeEffect(uint8_t value) {
   if (value >= 0 && value < 3 && (ws2812fx.getMode() != FX_MODE_STATIC)) {
-    ws2812fx.setMode(FX_MODE_STATIC);
+    changeModeWithVerification(FX_MODE_STATIC);
   } else if (value >= 4 && value < 7 && (ws2812fx.getMode() != FX_MODE_BLINK)) {
-    ws2812fx.setMode(FX_MODE_BLINK);
+    changeModeWithVerification(FX_MODE_BLINK);
   } else if (value >= 8 && value < 11 && (ws2812fx.getMode() != FX_MODE_BREATH)) {
-    ws2812fx.setMode(FX_MODE_BREATH);
+    changeModeWithVerification(FX_MODE_BREATH);
   } else if (value >= 12 && value < 15 && (ws2812fx.getMode() != FX_MODE_COLOR_WIPE)) {
-    ws2812fx.setMode(FX_MODE_COLOR_WIPE);
+    changeModeWithVerification(FX_MODE_COLOR_WIPE);
   } else if (value >= 16 && value < 19 && (ws2812fx.getMode() != FX_MODE_COLOR_WIPE_INV)) {
-    ws2812fx.setMode(FX_MODE_COLOR_WIPE_INV);
+    changeModeWithVerification(FX_MODE_COLOR_WIPE_INV);
   } else if (value >= 20 && value < 23 && (ws2812fx.getMode() != FX_MODE_COLOR_WIPE_REV)) {
-    ws2812fx.setMode(FX_MODE_COLOR_WIPE_REV);
+    changeModeWithVerification(FX_MODE_COLOR_WIPE_REV);
   } else if (value >= 24 && value < 27 && (ws2812fx.getMode() != FX_MODE_COLOR_WIPE_REV_INV)) {
-    ws2812fx.setMode(FX_MODE_COLOR_WIPE_REV_INV);
+    changeModeWithVerification(FX_MODE_COLOR_WIPE_REV_INV);
   } else if (value >= 28 && value < 31 && (ws2812fx.getMode() != FX_MODE_COLOR_WIPE_RANDOM)) {
-    ws2812fx.setMode(FX_MODE_COLOR_WIPE_RANDOM);
+    changeModeWithVerification(FX_MODE_COLOR_WIPE_RANDOM);
   } else if (value >= 32 && value < 35 && (ws2812fx.getMode() != FX_MODE_RANDOM_COLOR)) {
-    ws2812fx.setMode(FX_MODE_RANDOM_COLOR);
+    changeModeWithVerification(FX_MODE_RANDOM_COLOR);
   } else if (value >= 36 && value < 39 && (ws2812fx.getMode() != FX_MODE_SINGLE_DYNAMIC)) {
-    ws2812fx.setMode(FX_MODE_SINGLE_DYNAMIC);
+    changeModeWithVerification(FX_MODE_SINGLE_DYNAMIC);
   } else if (value >= 40 && value < 43 && (ws2812fx.getMode() != FX_MODE_MULTI_DYNAMIC)) {
-    ws2812fx.setMode(FX_MODE_MULTI_DYNAMIC);
+    changeModeWithVerification(FX_MODE_MULTI_DYNAMIC);
   } else if (value >= 44 && value < 47 && (ws2812fx.getMode() != FX_MODE_RAINBOW)) {
-    ws2812fx.setMode(FX_MODE_RAINBOW);
+    changeModeWithVerification(FX_MODE_RAINBOW);
   } else if (value >= 48 && value < 51 && (ws2812fx.getMode() != FX_MODE_RAINBOW_CYCLE)) {
-    ws2812fx.setMode(FX_MODE_RAINBOW_CYCLE);
+    changeModeWithVerification(FX_MODE_RAINBOW_CYCLE);
   } else if (value >= 52 && value < 55 && (ws2812fx.getMode() != FX_MODE_SCAN)) {
-    ws2812fx.setMode(FX_MODE_SCAN);
+    changeModeWithVerification(FX_MODE_SCAN);
   } else if (value >= 56 && value < 59 && (ws2812fx.getMode() != FX_MODE_DUAL_SCAN)) {
-    ws2812fx.setMode(FX_MODE_DUAL_SCAN);
+    changeModeWithVerification(FX_MODE_DUAL_SCAN);
   } else if (value >= 60 && value < 63 && (ws2812fx.getMode() != FX_MODE_FADE)) {
-    ws2812fx.setMode(FX_MODE_FADE);
+    changeModeWithVerification(FX_MODE_FADE);
   } else if (value >= 64 && value < 67 && (ws2812fx.getMode() != FX_MODE_THEATER_CHASE)) {
-    ws2812fx.setMode(FX_MODE_THEATER_CHASE);
+    changeModeWithVerification(FX_MODE_THEATER_CHASE);
   } else if (value >= 68 && value < 71 && (ws2812fx.getMode() != FX_MODE_THEATER_CHASE_RAINBOW)) {
-    ws2812fx.setMode(FX_MODE_THEATER_CHASE_RAINBOW);
+    changeModeWithVerification(FX_MODE_THEATER_CHASE_RAINBOW);
   } else if (value >= 72 && value < 75 && (ws2812fx.getMode() != FX_MODE_RUNNING_LIGHTS)) {
-    ws2812fx.setMode(FX_MODE_RUNNING_LIGHTS);
+    changeModeWithVerification(FX_MODE_RUNNING_LIGHTS);
   } else if (value >= 76 && value < 79 && (ws2812fx.getMode() != FX_MODE_TWINKLE)) {
-    ws2812fx.setMode(FX_MODE_TWINKLE);
+    changeModeWithVerification(FX_MODE_TWINKLE);
   } else if (value >= 80 && value < 83 && (ws2812fx.getMode() != FX_MODE_TWINKLE_RANDOM)) {
-    ws2812fx.setMode(FX_MODE_TWINKLE_RANDOM);
+    changeModeWithVerification(FX_MODE_TWINKLE_RANDOM);
   } else if (value >= 84 && value < 87 && (ws2812fx.getMode() != FX_MODE_TWINKLE_FADE)) {
-    ws2812fx.setMode(FX_MODE_TWINKLE_FADE);
+    changeModeWithVerification(FX_MODE_TWINKLE_FADE);
   } else if (value >= 88 && value < 91 && (ws2812fx.getMode() != FX_MODE_TWINKLE_FADE_RANDOM)) {
-    ws2812fx.setMode(FX_MODE_TWINKLE_FADE_RANDOM);
+    changeModeWithVerification(FX_MODE_TWINKLE_FADE_RANDOM);
   } else if (value >= 92 && value < 95 && (ws2812fx.getMode() != FX_MODE_SPARKLE)) {
-    ws2812fx.setMode(FX_MODE_SPARKLE);
+    changeModeWithVerification(FX_MODE_SPARKLE);
   } else if (value >= 96 && value < 99 && (ws2812fx.getMode() != FX_MODE_FLASH_SPARKLE)) {
-    ws2812fx.setMode(FX_MODE_FLASH_SPARKLE);
+    changeModeWithVerification(FX_MODE_FLASH_SPARKLE);
   } else if (value >= 100 && value < 103 && (ws2812fx.getMode() != FX_MODE_HYPER_SPARKLE)) {
-    ws2812fx.setMode(FX_MODE_HYPER_SPARKLE);
+    changeModeWithVerification(FX_MODE_HYPER_SPARKLE);
   } else if (value >= 104 && value < 107 && (ws2812fx.getMode() != FX_MODE_STROBE)) {
-    ws2812fx.setMode(FX_MODE_STROBE);
+    changeModeWithVerification(FX_MODE_STROBE);
   } else if (value >= 108 && value < 111 && (ws2812fx.getMode() != FX_MODE_STROBE_RAINBOW)) {
-    ws2812fx.setMode(FX_MODE_STROBE_RAINBOW);
+    changeModeWithVerification(FX_MODE_STROBE_RAINBOW);
   } else if (value >= 112 && value < 115 && (ws2812fx.getMode() != FX_MODE_MULTI_STROBE)) {
-    ws2812fx.setMode(FX_MODE_MULTI_STROBE);
+    changeModeWithVerification(FX_MODE_MULTI_STROBE);
   } else if (value >= 116 && value < 119 && (ws2812fx.getMode() != FX_MODE_BLINK_RAINBOW)) {
-    ws2812fx.setMode(FX_MODE_BLINK_RAINBOW);
+    changeModeWithVerification(FX_MODE_BLINK_RAINBOW);
   } else if (value >= 120 && value < 123 && (ws2812fx.getMode() != FX_MODE_CHASE_WHITE)) {
-    ws2812fx.setMode(FX_MODE_CHASE_WHITE);
-  } else if (value >= 124 && value < 127 && (ws2812fx.getMode() != FX_MODE_CHASE_COLOR)) {
-    ws2812fx.setMode(FX_MODE_CHASE_COLOR);
+    changeModeWithVerification(FX_MODE_CHASE_WHITE);
+  } else if (value >= 124 && value < 127 && (ws2812fx.getMode() != FX_MODE_CHASE_RAINBOW)) {
+    changeModeWithVerification(FX_MODE_CHASE_RAINBOW);
+  } else if (value >= 128 && value < 131 && (ws2812fx.getMode() != FX_MODE_CHASE_RANDOM)) {
+    changeModeWithVerification(FX_MODE_CHASE_RANDOM);
+  } else if (value >= 132 && value < 135 && (ws2812fx.getMode() != FX_MODE_CHASE_FLASH)) {
+    changeModeWithVerification(FX_MODE_CHASE_FLASH);
+  } else if (value >= 136 && value < 139 && (ws2812fx.getMode() != FX_MODE_CHASE_FLASH_RANDOM)) {
+    changeModeWithVerification(FX_MODE_CHASE_FLASH_RANDOM);
+  } else if (value >= 140 && value < 143 && (ws2812fx.getMode() != FX_MODE_CHASE_RAINBOW_WHITE)) {
+    changeModeWithVerification(FX_MODE_CHASE_RAINBOW_WHITE);
+  } else if (value >= 144 && value < 147 && (ws2812fx.getMode() != FX_MODE_CHASE_BLACKOUT)) {
+    changeModeWithVerification(FX_MODE_CHASE_BLACKOUT);
+  } else if (value >= 148 && value < 151 && (ws2812fx.getMode() != FX_MODE_CHASE_BLACKOUT_RAINBOW)) {
+    changeModeWithVerification(FX_MODE_CHASE_BLACKOUT_RAINBOW);
+  } else if (value >= 152 && value < 155 && (ws2812fx.getMode() != FX_MODE_COLOR_SWEEP_RANDOM)) {
+    changeModeWithVerification(FX_MODE_COLOR_SWEEP_RANDOM);
+  } else if (value >= 156 && value < 159 && (ws2812fx.getMode() != FX_MODE_RUNNING_COLOR)) {
+    changeModeWithVerification(FX_MODE_RUNNING_COLOR);
+  } else if (value >= 160 && value < 163 && (ws2812fx.getMode() != FX_MODE_RUNNING_RED_BLUE)) {
+    changeModeWithVerification(FX_MODE_RUNNING_RED_BLUE);
+  } else if (value >= 164 && value < 167 && (ws2812fx.getMode() != FX_MODE_RUNNING_RANDOM)) {
+    changeModeWithVerification(FX_MODE_RUNNING_RANDOM);
+  } else if (value >= 168 && value < 171 && (ws2812fx.getMode() != FX_MODE_LARSON_SCANNER)) {
+    changeModeWithVerification(FX_MODE_LARSON_SCANNER);
+  } else if (value >= 172 && value < 175 && (ws2812fx.getMode() != FX_MODE_COMET)) {
+    changeModeWithVerification(FX_MODE_COMET);
+  } else if (value >= 176 && value < 179 && (ws2812fx.getMode() != FX_MODE_FIREWORKS)) {
+    changeModeWithVerification(FX_MODE_FIREWORKS);
+  } else if (value >= 180 && value < 183 && (ws2812fx.getMode() != FX_MODE_FIREWORKS_RANDOM)) {
+    changeModeWithVerification(FX_MODE_FIREWORKS_RANDOM);
+  } else if (value >= 184 && value < 187 && (ws2812fx.getMode() != FX_MODE_MERRY_CHRISTMAS)) {
+    changeModeWithVerification(FX_MODE_MERRY_CHRISTMAS);
+  } else if (value >= 188 && value < 191 && (ws2812fx.getMode() != FX_MODE_FIRE_FLICKER)) {
+    changeModeWithVerification(FX_MODE_FIRE_FLICKER);
+  } else if (value >= 192 && value < 195 && (ws2812fx.getMode() != FX_MODE_FIRE_FLICKER_SOFT)) {
+    changeModeWithVerification(FX_MODE_FIRE_FLICKER_SOFT);
+  } else if (value >= 196 && value < 199 && (ws2812fx.getMode() != FX_MODE_FIRE_FLICKER_INTENSE)) {
+    changeModeWithVerification(FX_MODE_FIRE_FLICKER_INTENSE);
+  } else if (value >= 200 && value < 203 && (ws2812fx.getMode() != FX_MODE_CIRCUS_COMBUSTUS)) {
+    changeModeWithVerification(FX_MODE_CIRCUS_COMBUSTUS);
+  } else if (value >= 204 && value < 207 && (ws2812fx.getMode() != FX_MODE_HALLOWEEN)) {
+    changeModeWithVerification(FX_MODE_HALLOWEEN);
+  } else if (value >= 208 && value < 211 && (ws2812fx.getMode() != FX_MODE_BICOLOR_CHASE)) {
+    changeModeWithVerification(FX_MODE_BICOLOR_CHASE);
+  } else if (value >= 212 && value < 215 && (ws2812fx.getMode() != FX_MODE_TRICOLOR_CHASE)) {
+    changeModeWithVerification(FX_MODE_TRICOLOR_CHASE);
+  } else if (value >= 216 && value < 255 && (ws2812fx.getMode() != FX_MODE_ICU)) {
+    changeModeWithVerification(FX_MODE_ICU);
+  }
+}
+
+
+void changeModeWithVerification(uint8_t m) {
+  while(ws2812fx.getMode() != m) {
+    ws2812fx.setMode(m);
   }
 }
 
@@ -143,7 +196,11 @@ void changeDimmer(uint8_t value) {
 }
 
 void changeSpeed(uint8_t value) {
-  if (value >= 0 && value < 49 && ws2812fx.getSpeed() != 10000) {
+  uint16_t fvalue = 9916-((value*39)+10);
+  if (ws2812fx.getSpeed() != fvalue) {
+    ws2812fx.setSpeed(fvalue);
+  }
+  /*if (value >= 0 && value < 49 && ws2812fx.getSpeed() != 10000) {
     ws2812fx.setSpeed(10000);
   } else if (value >= 50 && value < 99 && ws2812fx.getSpeed() != 1000) {
     ws2812fx.setSpeed(1000);
@@ -151,10 +208,13 @@ void changeSpeed(uint8_t value) {
     ws2812fx.setSpeed(100);
   } else if (value >= 150 && value < 255 && ws2812fx.getSpeed() != 10) {
     ws2812fx.setSpeed(10);
-  }
+  }*/
 }
 
 void changeColor(uint8_t r, uint8_t g, uint8_t b) {
-  //ws2812fx.setColor(r,g,b);
+  uint32_t fcolor = (((uint32_t)r << 16) | ((uint32_t)g << 8) | b);
+  if (ws2812fx.getColor() != fcolor) {
+    ws2812fx.setColor(fcolor);
+  }
 }
 
