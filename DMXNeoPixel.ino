@@ -177,7 +177,7 @@ void changeEffect(uint8_t value) {
     changeModeWithVerification(FX_MODE_BICOLOR_CHASE);
   } else if (value >= 212 && value < 215 && (ws2812fx.getMode() != FX_MODE_TRICOLOR_CHASE)) {
     changeModeWithVerification(FX_MODE_TRICOLOR_CHASE);
-  } else if (value >= 216 && value < 255 && (ws2812fx.getMode() != FX_MODE_ICU)) {
+  } else if (value >= 216 && value < 256 && (ws2812fx.getMode() != FX_MODE_ICU)) {
     changeModeWithVerification(FX_MODE_ICU);
   }
 }
@@ -220,7 +220,7 @@ void changeSpeed(uint8_t value) {
     ws2812fx.setSpeed(50);
   } else if (value >= 220 && value < 239 && ws2812fx.getSpeed() != 25) {
     ws2812fx.setSpeed(25);
-  } else if (value >= 240 && value < 255 && ws2812fx.getSpeed() != 10) {
+  } else if (value >= 240 && value < 256 && ws2812fx.getSpeed() != 10) {
     ws2812fx.setSpeed(10);
   }
 }
@@ -229,6 +229,20 @@ void changeColor(uint8_t r, uint8_t g, uint8_t b) {
   uint32_t fcolor = (((uint32_t)r << 16) | ((uint32_t)g << 8) | b);
   if (ws2812fx.getColor() != fcolor) {
     ws2812fx.setColor(fcolor);
+  }
+}
+
+void reset(uint8_t value) {
+  if (value > 128) {
+    uint8_t m = ws2812fx.getMode();
+    uint8_t br = ws2812fx.getBrightness();
+    uint8_t sp = ws2812fx.getSpeed();
+    uint32_t c = ws2812fx.getColor();
+
+    ws2812fx.setMode(m);
+    ws2812fx.setBrightness(br);
+    ws2812fx.setSpeed(sp);
+    ws2812fx.setColor(c);
   }
 }
 
