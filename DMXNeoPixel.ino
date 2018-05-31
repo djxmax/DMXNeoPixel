@@ -1,7 +1,7 @@
 #include <WS2812FX.h>
 #include <DMXSerial.h>
 
-#define DMXLENGTH 6
+#define DMXLENGTH 7
 
 #define LED_COUNT 120
 #define LED_PIN 12
@@ -44,6 +44,7 @@ void loop() {
     changeDimmer(DMXSerial.read(2));
     changeSpeed(DMXSerial.read(3));
     changeColor(DMXSerial.read(4),DMXSerial.read(5),DMXSerial.read(6));
+    reset(DMXSerial.read(7));
   }
 }
 
