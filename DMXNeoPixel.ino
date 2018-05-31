@@ -196,19 +196,33 @@ void changeDimmer(uint8_t value) {
 }
 
 void changeSpeed(uint8_t value) {
-  uint16_t fvalue = 9916-((value*39)+10);
-  if (ws2812fx.getSpeed() != fvalue) {
-    ws2812fx.setSpeed(fvalue);
-  }
-  /*if (value >= 0 && value < 49 && ws2812fx.getSpeed() != 10000) {
+  if (value >= 0 && value < 19 && ws2812fx.getSpeed() != 10000) {
     ws2812fx.setSpeed(10000);
-  } else if (value >= 50 && value < 99 && ws2812fx.getSpeed() != 1000) {
+  } else if (value >= 20 && value < 39 && ws2812fx.getSpeed() != 7500) {
+    ws2812fx.setSpeed(7500);
+  } else if (value >= 40 && value < 59 && ws2812fx.getSpeed() != 5000) {
+    ws2812fx.setSpeed(5000);
+  } else if (value >= 60 && value < 79 && ws2812fx.getSpeed() != 2500) {
+    ws2812fx.setSpeed(2500);
+  } else if (value >= 80 && value < 99 && ws2812fx.getSpeed() != 1000) {
     ws2812fx.setSpeed(1000);
-  } else if (value >= 100 && value < 149 && ws2812fx.getSpeed() != 100) {
+  } else if (value >= 100 && value < 119 && ws2812fx.getSpeed() != 750) {
+    ws2812fx.setSpeed(750);
+  } else if (value >= 120 && value < 139 && ws2812fx.getSpeed() != 500) {
+    ws2812fx.setSpeed(500);
+  } else if (value >= 140 && value < 159 && ws2812fx.getSpeed() != 250) {
+    ws2812fx.setSpeed(250);
+  } else if (value >= 160 && value < 179 && ws2812fx.getSpeed() != 100) {
     ws2812fx.setSpeed(100);
-  } else if (value >= 150 && value < 255 && ws2812fx.getSpeed() != 10) {
+  } else if (value >= 180 && value < 199 && ws2812fx.getSpeed() != 75) {
+    ws2812fx.setSpeed(75);
+  } else if (value >= 200 && value < 219 && ws2812fx.getSpeed() != 50) {
+    ws2812fx.setSpeed(50);
+  } else if (value >= 220 && value < 239 && ws2812fx.getSpeed() != 25) {
+    ws2812fx.setSpeed(25);
+  } else if (value >= 240 && value < 255 && ws2812fx.getSpeed() != 10) {
     ws2812fx.setSpeed(10);
-  }*/
+  }
 }
 
 void changeColor(uint8_t r, uint8_t g, uint8_t b) {
