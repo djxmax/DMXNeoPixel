@@ -27,24 +27,29 @@ void setup() {
   DMXSerial.maxChannel(DMXLENGTH);
 
   ws2812fx.init();
-  ws2812fx.setBrightness(30);
+  ws2812fx.setBrightness(0);
   ws2812fx.setSpeed(100);
-  ws2812fx.setColor(0x0000FF);
+  ws2812fx.setColor(0x000000);
   ws2812fx.setMode(FX_MODE_STATIC);
   ws2812fx.start();
+
+  int i;
+  for (i = 0; i <= 7; i++) {
+    pinMode(dipPins[i],INPUT_PULLUP);
+  }
 }
 
 void loop() {
   ws2812fx.service();
   //ws2812fx.setMode(FX_MODE_RAINBOW_CYCLE);
   
-  //transAddress = address();
+  transAddress = address();
   if (DMXSerial.receive()) {
-    changeEffect(DMXSerial.read(1));
-    changeDimmer(DMXSerial.read(2));
-    changeSpeed(DMXSerial.read(3));
-    changeColor(DMXSerial.read(4),DMXSerial.read(5),DMXSerial.read(6));
-    reset(DMXSerial.read(7));
+    changeEffect(DMXSerial.read(transAddress));
+    changeDimmer(DMXSerial.read(transAddress+1));
+    changeSpeed(DMXSerial.read(transAddress+2));
+    changeColor(DMXSerial.read(transAddress+3),DMXSerial.read(transAddress+4),DMXSerial.read(transAddress+5));
+    reset(DMXSerial.read(transAddress+6));
   }
 }
 
